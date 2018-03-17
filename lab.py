@@ -35,7 +35,7 @@ class ModifiedGene(dj.Manual):
     definition = """
     gene_modification   : varchar(60)
     ---
-    description = ''         : varchar(256)
+    gene_modification_description = ''         : varchar(1000)
     """
 
 
@@ -139,7 +139,7 @@ class BrainArea(dj.Lookup):
     definition = """
     brain_area = 'ALM'  : varchar(32)
     ---
-    description = null : varchar (4000) # name of the brain area
+    brain_area_description = null : varchar (4000) # name of the brain area
     """
     contents = [('ALM', 'anterior lateral motor cortex'), ('vS1', 'vibrissal primary somatosensory cortex ("barrel cortex")')]
     
@@ -161,7 +161,7 @@ class Surgery(dj.Manual):
     -> Person
     start_time          : datetime # start time
     end_time            : datetime # end time
-    description         : varchar(256)
+    surgery_description         : varchar(1000)
     """
 
     class VirusInjection(dj.Part):
@@ -177,7 +177,7 @@ class Surgery(dj.Manual):
         dv_location     : Decimal(8,3) # um from dura dorsal is positive 
         volume          : Decimal(10,3) # in nl
         dilution        : Decimal (10, 2) # 1 to how much
-        description     : varchar(256)
+        surgery_virus_injection_description     : varchar(1000)
         """
 
     class Procedure(dj.Part):
@@ -190,7 +190,7 @@ class Surgery(dj.Manual):
         ml_location=null     : Decimal(8,3) # um from ref left is positive
         ap_location=null     : Decimal(8,3) # um from ref anterior is positive
         dv_location=null     : Decimal(8,3) # um from dura dorsal is positive 
-        description     : varchar(1000)
+        surgery_procedure_description     : varchar(1000)
         """
 
 
