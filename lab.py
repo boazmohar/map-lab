@@ -141,7 +141,7 @@ class BrainArea(dj.Lookup):
     ---
     brain_area_description = null : varchar (4000) # name of the brain area
     """
-    contents = [('ALM', 'anterior lateral motor cortex'), ('vS1', 'vibrissal primary somatosensory cortex ("barrel cortex")')]
+    contents = [('ALM', 'anterior lateral motor cortex'), ('vS1', 'vibrissal primary somatosensory cortex ("barrel cortex")'), ('all', 'all areas')]
     
     
 @schema
@@ -149,7 +149,7 @@ class Hemisphere(dj.Lookup):
     definition = """
     hemisphere = 'left'   : varchar(32)
     """
-    contents = zip(['left', 'right'])
+    contents = zip(['left', 'right', 'both'])
     
     
 @schema
